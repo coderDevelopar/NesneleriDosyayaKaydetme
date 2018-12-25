@@ -1,0 +1,35 @@
+class Ogrenci():
+    def __init__(self , Ad = "Bilgi Yok"):
+        self.Ad = Ad
+    def AdVerisi(self , Ad_Verisi):
+        self.Ad = Ad_Verisi
+        file = open("Ogrenci.txt" , "a" , encoding = "utf-8")
+        file.write(self.Ad_Verisi)
+        file.close()
+    """def SoyadVerisi(self , Soyad_Verisi):
+        file = open("Ogrenci.txt" , "a" , encoding = "utf-8")
+        file.write(self.Soyad_Verisi)
+        file.close()
+    def OrtalamaVerisi(self , Ortalama_Verisi):
+        file = open("Ogrenci.txt" , "a" , encoding = "utf-8")
+        file.write(self.Ortalama_Verisi)
+        file.close()
+    def BolumVerisi(self , Bolum_Verisi):
+        file = open("Ogrenci.txt" , "a" , encoding = "utf-8")
+        file.write(self.Bolum_Verisi)
+        file.close()
+    def TecrubeVerisi(self , Tecrube_Verisi):
+        file = open("Ogrenci.txt" , "a" , encoding = "utf-8")
+        file.write(self.Tecrube_Verisi)
+        file.close()"""
+    def BilgileriGoster(self):
+        with open("Ogrenci.txt" , "r" , encoding = "utf") as file:
+            print("""
+                                    Öğrencinin Bilgileri
+            Ad: {}
+
+            """.format(file.read(self.AdVerisi)))
+Ogrenci = Ogrenci()
+with open("Ogrenci.txt" , "a" , encoding = "utf-8") as file:
+    file.write(Ogrenci.AdVerisi(input("Öğrencinin Adını Giriniz: ")))
+print(Ogrenci.BilgileriGoster())
